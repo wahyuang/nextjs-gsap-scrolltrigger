@@ -1,65 +1,65 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Slideshow from '../components/slideshow' 
+import Section from '../components/section'
+import SectionTitle from '../components/sectiontitle'
+import AnimatedImage from '../components/animatedimage'
+import FadeIn from '../components/fadein'
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    return (
+		<>
+			<Head>
+				<title>Homepage</title>
+			</Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+			<Section customClass="section1" bgcolor="#f4f4f4">
+				<SectionTitle textContent="Welcome Home" />
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+				<div className="row">
+					<div className="col-6">
+						<FadeIn>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo aspernatur tenetur, dolore hic, odit voluptate aliquid error aperiam, neque atque dolores. Adipisci, ipsum corrupti quam officiis inventore distinctio quas necessitatibus?
+						</FadeIn>
+					</div>
+					<div className="col-6">
+						<AnimatedImage />
+					</div>
+				</div>
+			</Section>
+			
+			<Section bgcolor="#ddd" customClass="section2">
+				<SectionTitle textContent="Another Section" />
+				<div className="row">
+					<div className="col-6">
+						<AnimatedImage />
+					</div>
+					<div className="col-6">
+					<FadeIn>
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo aspernatur tenetur, dolore hic, odit voluptate aliquid error aperiam, neque atque dolores. Adipisci, ipsum corrupti quam officiis inventore distinctio quas necessitatibus?
+						</FadeIn>
+					</div>
+					
+				</div>
+			</Section>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+			<Section>
+				<SectionTitle textContent="Latest Projects" />
+				<div className="row">
+					<div className="col-6">
+						<FadeIn>
+						
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo aspernatur tenetur, dolore hic, odit voluptate aliquid error aperiam, neque atque dolores. Adipisci, ipsum corrupti quam officiis inventore distinctio quas necessitatibus?
+						</FadeIn>
+					</div>
+					<div className="col-6">
+						<AnimatedImage />
+					</div>
+				</div>
+			</Section>
+		</>
+    )
+}
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+function countClick(){
+	return clicked + 1;
 }
